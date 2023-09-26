@@ -46,12 +46,12 @@ public class TaskService {
     }
 
     public void delete(Long id){
-        findById(id)
+        findById(id);
         try {
             this.taskRepository.deleteById(id);
         } catch (Exception e) {
             // TODO: handle exception
-            throw new RuntimeException("Não é possível excluir!");
+            throw new RuntimeException("Não é possível excluir pois há entidades relacionadas!");
         }
     }
     
